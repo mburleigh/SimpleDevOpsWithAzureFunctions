@@ -1,0 +1,22 @@
+resources:
+- repo: self
+queue:
+  name: Hosted VS2017
+steps:
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: code'
+  inputs:
+    PathtoPublish: Src
+    ArtifactName: code
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: ARM'
+  inputs:
+    PathtoPublish: Deploy
+    ArtifactName: arm
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: Tests'
+  inputs:
+    PathtoPublish: Tests.Integration
+    ArtifactName: tests
