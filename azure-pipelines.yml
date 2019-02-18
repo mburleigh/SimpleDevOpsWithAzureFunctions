@@ -14,9 +14,3 @@ steps:
   inputs:
     PathtoPublish: Deploy
     ArtifactName: arm
-
-- task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: Tests'
-  inputs:
-    PathtoPublish: Tests.Integration
-    ArtifactName: tests
